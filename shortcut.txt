@@ -1,0 +1,8 @@
+SQL
+
+No. of tables
+select * from information_schema.tables;
+
+table properties
+sp_help kapil;
+

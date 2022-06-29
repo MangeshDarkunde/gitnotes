@@ -1,0 +1,1577 @@
+1. From the following tables, write a SQL query to find the information on each salesperson of ABC Company. Return name, city, country and state of each salesperson. Go to the editor					
+Input:					
+table: salespersons					
+					
+salesperson_id|first_name|last_name|					
+--------------|----------|---------|					
+             1|Green     |Wright   |					
+             2|Jones     |Collins  |					
+             3|Bryant    |Davis    |					
+					
+table: address					
+					
+address_id|salesperson_id|city       |state     |country|					
+----------|--------------|-----------|----------|-------|					
+         1|             2|Los Angeles|California|USA    |					
+         2|             3|Denver     |Colorado  |USA    |					
+         3|             4|Atlanta    |Georgia   |USA    |					
+					
+Output:					
+					
+first_name|last_name|city       |state     |					
+----------|---------|-----------|----------|					
+Jones     |Collins  |Los Angeles|California|					
+Bryant    |Davis    |Denver     |Colorado  |					
+Green     |Wright   |           |          |					
+					
+					
+2. From the following table, write a SQL query to find the third highest sale. Return sale amount. Go to the editor					
+Input:					
+table: salemast					
+					
+sale_id|employee_id|sale_date |sale_amt|					
+-------|-----------|----------|--------|					
+      1|       1000|2012-03-08|    4500|					
+      2|       1001|2012-03-09|    5500|					
+      3|       1003|2012-04-10|    3500|					
+      3|       1003|2012-04-10|    2500|					
+					
+Output:					
+					
+SecondHighestSale|					
+-----------------|					
+             4500|					
+					
+					
+3. From the following table, write a SQL query to find the Nth highest sale. Return sale amount. Go to the editor					
+Input:					
+table: salemast					
+					
+sale_id|employee_id|sale_date |sale_amt|					
+-------|-----------|----------|--------|					
+      1|       1000|2012-03-08|    4500|					
+      2|       1001|2012-03-09|    5500|					
+      3|       1003|2012-04-10|    3500|					
+					
+Output:					
+					
+getNthHighestSaleAmt(3)|					
+-----------------------|					
+                   3500|					
+					
+					
+4. From the following table, write a SQL query to find the marks, which appear at least thrice one after another without interruption. Return the number. Go to the editor					
+Input:					
+table: logs					
+					
+student_id|marks|					
+----------|-----|					
+       101|   83|					
+       102|   79|					
+       103|   83|					
+       104|   83|					
+       105|   83|					
+       106|   79|					
+       107|   79|					
+       108|   83|					
+					
+Output:					
+					
+ConsecutiveNums|					
+---------------|					
+             83|					
+					
+					
+5. From the following table, write a SQL query to find all the duplicate emails (no upper case letters) of the employees. Return email id. Go to the editor					
+Input:					
+table: employees					
+					
+employee_id|employee_name|email_id     |					
+-----------|-------------|-------------|					
+        101|Liam Alton   |li.al@abc.com|					
+        102|Josh Day     |jo.da@abc.com|					
+        103|Sean Mann    |se.ma@abc.com|					
+        104|Evan Blake   |ev.bl@abc.com|					
+        105|Toby Scott   |jo.da@abc.com|					
+					
+Output:					
+					
+email_id     |					
+-------------|					
+jo.da@abc.com|					
+					
+					
+6. From the following tables, write a SQL query to find those customers who never ordered anything. Return customer name. Go to the editor					
+Input:					
+table: customers					
+					
+customer_id|customer_name|					
+-----------|-------------|					
+        101|Liam         |					
+        102|Josh         |					
+        103|Sean         |					
+        104|Evan         |					
+        105|Toby         |					
+					
+table: orders					
+					
+order_id|customer_id|order_date|order_amount|					
+--------|-----------|----------|------------|					
+     401|        103|2012-03-08|        4500|					
+     402|        101|2012-09-15|        3650|					
+     403|        102|2012-06-27|        4800|					
+					
+Output:					
+					
+Customers|					
+---------|					
+Evan     |					
+Toby     |					
+					
+					
+7. From the following table, write a SQL query to remove all the duplicate emails of employees keeping the unique email with the lowest employee id. Return employee id and unique emails. Go to the editor					
+Input:					
+table: employees					
+					
+employee_id|employee_name|email_id     |					
+-----------|-------------|-------------|					
+        101|Liam Alton   |li.al@abc.com|					
+        102|Josh Day     |jo.da@abc.com|					
+        103|Sean Mann    |se.ma@abc.com|					
+        104|Evan Blake   |ev.bl@abc.com|					
+        105|Toby Scott   |jo.da@abc.com|					
+					
+Output:					
+					
+employee_id|employee_name|email_id     |					
+-----------|-------------|-------------|					
+        101|Liam Alton   |li.al@abc.com|					
+        102|Josh Day     |jo.da@abc.com|					
+        103|Sean Mann    |se.ma@abc.com|					
+        104|Evan Blake   |ev.bl@abc.com|					
+					
+					
+8. From the following table, write a SQL query to find all dates' city ID with higher pollution compared to its previous dates (yesterday). Return city ID, date and pollution. Go to the editor					
+Input:					
+table: so2_pollution					
+					
+city_id|date      |so2_amt|					
+-------|----------|-------|					
+    701|2015-10-15|      5|					
+    702|2015-10-16|      7|					
+    703|2015-10-17|      9|					
+    704|2018-10-18|     15|					
+    705|2015-10-19|     14|					
+					
+Output:					
+					
+City ID|					
+-------|					
+    702|					
+    703|					
+					
+					
+9. A salesperson is a person whose job is to sell products or services.					
+From the following tables, write a SQL query to find the top 10 salesperson that have made highest sale. Return their names and total sale amount. Go to the editor					
+Input:					
+Table: sales					
+					
+TRANSACTION_ID|SALESMAN_ID|SALE_AMOUNT|					
+--------------|-----------|-----------|					
+           501|         18|    5200.00|					
+           502|         50|    5566.00|					
+           503|         38|    8400.00|					
+...					
+           599|         24|   16745.00|					
+           600|         12|   14900.00|					
+					
+Table: salesman					
+					
+SALESMAN_ID|SALESMAN_NAME        |					
+-----------|---------------------|					
+         11|Jonathan Goodwin     |					
+         12|Adam Hughes          |					
+         13|Mark Davenport       |					
+....					
+         59|Cleveland Hart       |					
+         60|Marion Gregory       |					
+					
+Output:					
+					
+salesman_name        |total_sale|					
+---------------------|----------|					
+Dan McKee            |  70530.00|					
+Cleveland Klein      |  61020.00|					
+Elliot Clapham       |  60519.00|					
+Evan Blake           |  53108.00|					
+Ollie Wheatley       |  52640.00|					
+Frederick Kelsey     |  52270.00|					
+Sean Mann            |  52053.00|					
+Callum Bing          |  48645.00|					
+Kian Wordsworth      |  45250.00|					
+Bradley Wright       |  41961.00|					
+					
+					
+10. An active customer is simply someone who has bought company's product once before and has returned to make another purchase within 10 days.					
+From the following table, write a SQL query to identify the active customers. Show the list of customer IDs of active customers. Go to the editor					
+Input:					
+Table: orders					
+					
+ORDER_ID|CUSTOMER_ID|ITEM_DESC|ORDER_DATE|					
+--------|-----------|---------|----------|					
+     101|       2109|juice    |2020-03-03|					
+     102|       2139|chocolate|2019-03-18|					
+     103|       2120|juice    |2019-03-18|					
+...					
+     199|       2130|juice    |2019-03-16|					
+     200|       2117|cake     |2021-03-10|					
+					
+Output:					
+					
+customer_id|					
+-----------|					
+       2103|					
+       2110|					
+       2111|					
+       2112|					
+       2129|					
+       2130|					
+					
+					
+11. From the following table, write a SQL query to convert negative numbers to positive and vice verse. Return the number. Go to the editor					
+Input:					
+Table name: tablefortest					
+					
+srno|pos_neg_val|					
+----|-----------|					
+   1|         56|					
+   2|        -74|					
+   3|         15|					
+   4|        -51|					
+   5|         -9|					
+   6|         32|					
+					
+Output:					
+					
+srno|pos_neg_val|converted_signed_value|					
+----|-----------|----------------------|					
+   1|         56|                   -56|					
+   2|        -74|                    74|					
+   3|         15|                   -15|					
+   4|        -51|                    51|					
+   5|         -9|                     9|					
+   6|         32|                   -32|					
+					
+					
+12. From the following table, write a SQL query to find the century of a given date. Return the century. Go to the editor					
+Input:					
+Table name: tablefortest					
+					
+ID|date_of_birth|					
+--|-------------|					
+ 1|   1907-08-15|					
+ 2|   1883-06-27|					
+ 3|   1900-01-01|					
+ 4|   1901-01-01|					
+ 5|   2005-09-01|					
+ 6|   1775-11-23|					
+ 7|   1800-01-01|					
+					
+Output:					
+					
+id|date_of_birth|Century|					
+--|-------------|-------|					
+ 1|   1907-08-15|   20  |					
+ 2|   1883-06-27|   19  |					
+ 3|   1900-01-01|   19  |					
+ 4|   1901-01-01|   20  |					
+ 5|   2005-09-01|   21  |					
+ 6|   1775-11-23|   18  |					
+ 7|   1800-01-01|   18  |					
+					
+					
+13. From the following table, write a SQL query to find the even or odd values. Return "Even" for even number and "Odd" for odd number. Go to the editor					
+Input:					
+Table name: tablefortest					
+					
+srno|col_val|					
+----|-------|					
+   1|     56|					
+   2|     74|					
+   3|     15|					
+   4|     51|					
+   5|      9|					
+   6|     32|					
+					
+Output:					
+					
+srno|col_val|Even_Odd|					
+----|-------|--------|					
+   1|     56|Even    |					
+   2|     74|Even    |					
+   3|     15|Odd     |					
+   4|     51|Odd     |					
+   5|      9|Odd     |					
+   6|     32|Even    |					
+					
+					
+14. From the following table, write a SQL query to find the unique marks. Return the unique marks. Go to the editor					
+Input:					
+Table name: student_test					
+					
+student_id|marks_achieved|					
+----------|--------------|					
+         1|            56|					
+         2|            74|					
+         3|            15|					
+         4|            74|					
+         5|            89|					
+         6|            56|					
+         7|            93|					
+					
+Output:					
+					
+Unique Marks|					
+------------|					
+          56|					
+          74|					
+          15|					
+          89|					
+          93|					
+					
+					
+15. From the following table, write a SQL query to find those students who have referred by the teacher whose id not equal to 602. Return the student names. Go to the editor					
+Input:					
+Table Name: students					
+					
+student_id|student_name|teacher_id|					
+----------|------------|----------|					
+      1001|Alex        |       601|					
+      1002|Jhon        |          |					
+      1003|Peter       |          |					
+      1004|Minto       |       604|					
+      1005|Crage       |          |					
+      1006|Chang       |       601|					
+      1007|Philip      |       602|					
+					
+Output:					
+					
+student_name|					
+------------|					
+Alex        |					
+Jhon        |					
+Peter       |					
+Minto       |					
+Crage       |					
+Chang       |					
+					
+					
+16. From the following table, write a SQL query to find the salesperson that makes maximum number of sales amount.					
+If there are, more than one saleperson with maximum number of sales amount find all the salespersons. Return salesperson id. Go to the editor					
+Input:					
+Table Name: salemast					
+					
+salesperson_id|order_id|					
+--------------|--------|					
+          5001|    1001|					
+          5002|    1002|					
+          5003|    1002|					
+          5004|    1002|					
+          5005|    1003|					
+          5006|    1004|					
+					
+Output:					
+					
+ order_id|					
+--------|					
+    1002|					
+					
+					
+17. A city is big if it has an area bigger than 50K square km or a population of more than 15 million.					
+From the following table, write a SQL query to find big cities name, population and area. Go to the editor					
+Input:					
+Table : cities_test					
+					
+city_name    |country      |city_population|city_area|					
+-------------|-------------|---------------|---------|					
+Tokyo        |Japan        |       13515271|     2191|					
+Delhi        |India        |       16753235|     1484|					
+Shanghai     |China        |       24870895|     6341|					
+Sao Paulo    |Brazil       |       12252023|     1521|					
+Mexico City  |Mexico       |        9209944|     1485|					
+Cairo        |Egypt        |        9500000|     3085|					
+Mumbai       |India        |       12478447|      603|					
+Beijing      |China        |       21893095|    16411|					
+Osaka        |Japan        |        2725006|      225|					
+New York     |United States|        8398748|      786|					
+Buenos Aires |Argentina    |        3054300|      203|					
+Chongqing    |China        |       32054159|    82403|					
+Istanbul     |Turkey       |       15519267|     5196|					
+Kolkata      |India        |        4496694|      205|					
+Manila       |Philippines  |        1780148|       43|					
+					
+Output:					
+					
+city_name   |country |city_population|city_area|					
+------------|--------|---------------|---------|					
+Delhi       |India   |       16753235|     1484|					
+Shanghai    |China   |       24870895|     6341|					
+Beijing     |China   |       21893095|    16411|					
+Chongqing   |China   |       32054159|    82403|					
+Istanbul    |Turkey  |       15519267|     5196|					
+					
+					
+18. From the following table, write a SQL query to find those items, which have ordered 5 or more times. Return item name and number of orders. Go to the editor					
+Input:					
+Table: orders					
+					
+ORDER_ID|CUSTOMER_ID|ITEM_DESC|					
+--------|-----------|---------|					
+     101|       2109|juice    |					
+     102|       2139|chocolate|					
+     103|       2120|juice    |					
+     104|       2108|cookies  |					
+     105|       2130|juice    |					
+     106|       2103|cake     |					
+     107|       2122|cookies  |					
+     108|       2125|cake     |					
+     109|       2139|cake     |					
+     110|       2141|cookies  |					
+     111|       2116|cake     |					
+     112|       2128|cake     |					
+     113|       2146|chocolate|					
+     114|       2119|cookies  |					
+     115|       2142|cake     |					
+					
+Output:					
+					
+item_desc|Number of orders|					
+---------|----------------|					
+cake     |               6|					
+					
+					
+19. From the following tables, write a SQL query to find the overall rate of execution of orders, which is the number of orders execution divided by the number of orders quote. Return rate_of_execution rounded to 2 decimals places. Go to the editor					
+Input:					
+Table: orders_issued					
+					
+distributor_id|company_id|quotation_date|					
+--------------|----------|--------------|					
+           101|       202|    2019-11-15|					
+           101|       203|    2019-11-15|					
+           101|       204|    2019-11-15|					
+           102|       202|    2019-11-16|					
+           102|       201|    2019-11-15|					
+           103|       203|    2019-11-17|					
+           103|       202|    2019-11-17|					
+           104|       203|    2019-11-18|					
+           104|       204|    2019-11-18|					
+					
+Table: orders_executed					
+					
+orders_from|executed_from|executed_date|					
+-----------|-------------|-------------|					
+        101|          202|   2019-11-17|					
+        101|          203|   2019-11-17|					
+        102|          202|   2019-11-17|					
+        103|          203|   2019-11-18|					
+        103|          202|   2019-11-19|					
+        104|          203|   2019-11-20|					
+					
+Output:					
+					
+rate_of_execution|					
+-----------------|					
+             0.67|					
+					
+					
+20. From the following table write an SQL query to display the records with four or more rows with consecutive match_no's, 
+and the crowd attended more than or equal to 50000 for each match. Return match_no, match_date and audience. Order the result by visit_date, descending.
+Go to the editor					
+Input:					
+table : match_crowd					
+					
+match_no|match_date|audience|					
+--------|----------|--------|					
+       1|2016-06-11|   75113|					
+       2|2016-06-12|   62343|					
+       3|2016-06-13|   43035|					
+       4|2016-06-14|   55408|					
+       5|2016-06-15|   38742|					
+       6|2016-06-16|   63670|					
+       7|2016-06-17|   73648|					
+       8|2016-06-18|   52409|					
+       9|2016-06-19|   67291|					
+      10|2016-06-20|   49752|					
+      11|2016-06-21|   28840|					
+      12|2016-06-22|   32836|					
+      13|2016-06-23|   44268|					
+					
+Output:					
+					
+match_no|match_date|audience|					
+--------|----------|--------|					
+       6|2016-06-16|   63670|					
+       7|2016-06-17|   73648|					
+       8|2016-06-18|   52409|					
+       9|2016-06-19|   67291|					
+					
+					
+21. From the following table write a SQL query to know the availability of the doctor for consecutive 2 or more days. Return visiting days. Go to the editor					
+Input:					
+Table: dr_clinic					
+					
+visiting_date|availability|					
+-------------|------------|					
+   2016-06-11|           1|					
+   2016-06-12|           1|					
+   2016-06-13|           0|					
+   2016-06-14|           1|					
+   2016-06-15|           0|					
+   2016-06-16|           0|					
+   2016-06-17|           1|					
+   2016-06-18|           1|					
+   2016-06-19|           1|					
+   2016-06-20|           1|					
+   2016-06-21|           1|					
+					
+Output:					
+					
+visiting_date|					
+-------------|					
+   2016-06-11|					
+   2016-06-12|					
+   2016-06-17|					
+   2016-06-18|					
+   2016-06-19|					
+   2016-06-20|					
+   2016-06-21|   					
+					
+					
+22. From the following tables find those customers who did not make any order to the supplier 'DCX LTD'. Return customers name. Go to the editor					
+Input:					
+Table: customers					
+					
+customer_id|customer_name|customer_city|avg_profit|					
+-----------|-------------|-------------|----------|					
+        101|Liam         |New York     |     25000|					
+        102|Josh         |Atlanta      |     22000|					
+        103|Sean         |New York     |     27000|					
+        104|Evan         |Toronto      |     15000|					
+        105|Toby         |Dallas       |     20000|					
+					
+Table : supplier					
+					
+supplier_id|supplier_name|supplier_city|					
+-----------|-------------|-------------|					
+        501|ABC INC      |Dallas       |					
+        502|DCX LTD      |Atlanta      |					
+        503|PUC ENT      |New York     |					
+        504|JCR INC      |Toronto      |					
+					
+Table: orders					
+					
+order_id|customer_id|supplier_id|order_date|order_amount|					
+--------|-----------|-----------|----------|------------|					
+     401|        103|        501|2012-03-08|        4500|					
+     402|        101|        503|2012-09-15|        3650|					
+     403|        102|        503|2012-06-27|        4800|					
+     404|        104|        502|2012-06-17|        5600|					
+     405|        104|        504|2012-06-22|        6000|					
+     406|        105|        502|2012-06-25|        5600|					
+					
+Output:					
+					
+customer_name|					
+-------------|					
+Liam         |					
+Josh         |					
+Sean         |					
+----------------------					
+					
+					
+23. Table students contain marks of mathematics for several students in a class. It may same marks for more than one student.					
+From the following table write a SQL table to find the highest unique marks a student achieved. Return the marks. Go to the editor					
+Table: students					
+					
+student_id|student_name|marks_achieved|					
+----------|------------|--------------|					
+         1|Alex        |            87|					
+         2|Jhon        |            92|					
+         3|Pain        |            83|					
+         4|Danny       |            87|					
+         5|Paul        |            92|					
+         6|Rex         |            89|					
+         7|Philip      |            87|					
+         8|Josh        |            83|					
+         9|Evan        |            92|					
+        10|Larry       |            87|					
+					
+Output:					
+					
+marks|					
+-----|					
+   89|					
+					
+					
+24. In a hostel, each room contains two beds. After every 6 months a student have to change their bed with his or her room-mate.					
+From the following tables write a SQL query to find the new beds of the students in the hostel. Return original_bed_id, student_name, bed_id and student_new. Go to the editor					
+Table : bed_info					
+					
+bed_id|student_name|					
+------|------------|					
+   101|Alex        |					
+   102|Jhon        |					
+   103|Pain        |					
+   104|Danny       |					
+   105|Paul        |					
+   106|Rex         |					
+   107|Philip      |					
+   108|Josh        |					
+   109|Evan        |					
+   110|Green       |					
+					
+Output:					
+					
+original_bed_id|student_name|bed_id|student_new|					
+---------------|------------|------|-----------|					
+            102|Jhon        |   101|Jhon       |					
+            101|Alex        |   102|Alex       |					
+            104|Danny       |   103|Danny      |					
+            103|Pain        |   104|Pain       |					
+            106|Rex         |   105|Rex        |					
+            105|Paul        |   106|Paul       |					
+            108|Josh        |   107|Josh       |					
+            107|Philip      |   108|Philip     |					
+            110|Green       |   109|Green      |					
+            109|Evan        |   110|Evan       |					
+					
+					
+25. From the following table, write a SQL query to find the first login date for each customer. Return customer id, login date. Go to the editor					
+Input:					
+Table: bank_trans					
+					
+trans_id|customer_id|login_date|					
+--------|-----------|----------|					
+     101|       3002|2019-09-01|					
+     101|       3002|2019-08-01|					
+     102|       3003|2018-09-13|					
+     102|       3002|2018-07-24|					
+     103|       3001|2019-09-25|					
+     102|       3004|2017-09-05|					
+					
+Output:					
+					
+customer_id|first_login|					
+-----------|-----------|					
+       3001| 2019-09-25|					
+       3002| 2018-07-24|					
+       3003| 2018-09-13|					
+       3004| 2017-09-05|					
+					
+					
+26. From the following table, write a SQL query to find those salespersons whose commission is less than ten thousand. Return salesperson name, commission. Go to the editor					
+Input:					
+Table: salemast					
+					
+salesman_id|salesman_name|yearly_sale|					
+-----------|-------------|-----------|					
+        101|Adam         |     250000|					
+        103|Mark         |     100000|					
+        104|Liam         |     200000|					
+        102|Evan         |     150000|					
+        105|Blake        |     275000|					
+        106|Noah         |      50000|					
+					
+Table : commision					
+					
+salesman_id|commision_amt|					
+-----------|-------------|					
+        101|        10000|					
+        103|         4000|					
+        104|         8000|					
+        102|         6000|					
+        105|        11000|					
+					
+Output:					
+					
+salesman_name|commision_amt|					
+-------------|-------------|					
+Mark         |         4000|					
+Liam         |         8000|					
+Evan         |         6000|					
+					
+					
+27. From the following table write a SQL query to find those distributors who purchased all types of item from the company. Return distributors ids. Go to the editor					
+Input:					
+Table: items					
+					
+item_code|item_name|					
+---------|---------|					
+    10091|juice    |					
+    10092|chocolate|					
+    10093|cookies  |					
+    10094|cake     |					
+					
+Table : orders					
+					
+order_id|distributor_id|item_ordered|item_quantity|					
+--------|--------------|------------|-------------|					
+       1|           501|       10091|          250|					
+       2|           502|       10093|          100|					
+       3|           503|       10091|          200|					
+       4|           502|       10091|          150|					
+       5|           502|       10092|          300|					
+       6|           504|       10094|          200|					
+       7|           503|       10093|          250|					
+       8|           503|       10092|          250|					
+       9|           501|       10094|          180|					
+      10|           503|       10094|          350|					
+					
+Output:					
+					
+distributor_id|					
+--------------|					
+           503|					
+					
+					
+28. From the following tables write a SQL query to find those directors and actors who worked together at least three or more movies. Return the director and actor name. Go to the editor					
+Input:					
+Table: actor_test					
+					
+act_id|act_name         |					
+------|-----------------|					
+   101|James Stewart    |					
+   102|Deborah Kerr     |					
+   103|Peter OToole     |					
+   104|Robert De Niro   |					
+   105|F. Murray Abraham|					
+   106|Harrison Ford    |					
+   107|Bill Paxton      |					
+   108|Stephen Baldwin  |					
+   109|Jack Nicholson   |					
+   110|Mark Wahlberg    |					
+					
+Table : director_test					
+					
+dir_id|dir_name         |					
+------|-----------------|					
+   201|Alfred Hitchcock |					
+   202|Jack Clayton     |					
+   203|James Cameron    |					
+   204|Michael Cimino   |					
+   205|Milos Forman     |					
+   206|Ridley Scott     |					
+   207|Stanley Kubrick  |					
+   208|Bryan Singer     |					
+   209|Roman Polanski   |					
+					
+Table: movie_test					
+					
+mov_id|movie_name         |					
+------|-------------------|					
+   901|Vertigo            |					
+   902|Aliens             |					
+   903|Lawrence of Arabia |					
+   904|The Deer Hunter    |					
+   905|True Lies          |					
+   906|Blade Runner       |					
+   907|Eyes Wide Shut     |					
+   908|Titanic            |					
+   909|Chinatown          |					
+   910|Ghosts of the Abyss|					
+					
+Table : mov_direction_test					
+					
+dir_id|mov_id|act_id|					
+------|------|------|					
+   201|   901|   101|					
+   203|   902|   107|					
+   204|   904|   104|					
+   203|   905|   107|					
+   206|   906|   106|					
+   203|   908|   107|					
+   209|   909|   109|					
+   203|   910|   107|					
+					
+Output:					
+					
+dir_name     |act_name   |					
+-------------|-----------|					
+James Cameron|Bill Paxton|					
+					
+					
+29. From the following tables write a SQL query to find those students who achieved 100 percent in various subjects in every year. Return examination ID, subject name, examination year, number of students. Go to the editor					
+Input:					
+Table: exam_test					
+					
+exam_id|subject_id|exam_year|no_of_student|					
+-------|----------|---------|-------------|					
+     71|       201|     2017|         5146|					
+     71|       201|     2018|         3545|					
+     71|       202|     2018|         5945|					
+     71|       202|     2019|         2500|					
+     71|       203|     2017|         2500|					
+     72|       201|     2018|         3500|					
+     72|       202|     2017|         3651|					
+     73|       201|     2018|         2647|					
+     73|       201|     2019|         2647|					
+     73|       202|     2018|         4501|					
+					
+Table : subject_test					
+					
+subject_id|subject_name|					
+----------|------------|					
+       201|Mathematics |					
+       202|Physics     |					
+       203|Chemistry   |					
+					
+Output:					
+					
+exam_id|subject_name|exam_year|no_of_student|					
+-------|------------|---------|-------------|					
+     71|Chemistry   |     2017|         2500|					
+     71|Mathematics |     2017|         5146|					
+     71|Mathematics |     2018|         3545|					
+     71|Physics     |     2018|         5945|					
+     71|Physics     |     2019|         2500|					
+     72|Mathematics |     2018|         3500|					
+     72|Physics     |     2017|         3651|					
+     73|Mathematics |     2018|         2647|					
+     73|Mathematics |     2019|         2647|					
+     73|Physics     |     2018|         4501|					
+					
+					
+30. From the following tables write a SQL query to find those students who achieved 100 percent marks in every subject for all the year. Return subject ID, subject name, students for all year. Go to the editor					
+Input:					
+Table: exam_test					
+					
+exam_id|subject_id|exam_year|no_of_student|					
+-------|----------|---------|-------------|					
+     71|       201|     2017|         5146|					
+     71|       201|     2018|         3545|					
+     71|       202|     2018|         5945|					
+     71|       202|     2019|         2500|					
+     71|       203|     2017|         2500|					
+     72|       201|     2018|         3500|					
+     72|       202|     2017|         3651|					
+     73|       201|     2018|         2647|					
+     73|       201|     2019|         2647|					
+     73|       202|     2018|         4501|					
+					
+Table : subject_test					
+					
+subject_id|subject_name|					
+----------|------------|					
+       201|Mathematics |					
+       202|Physics     |					
+       203|Chemistry   |					
+					
+Output:					
+					
+subject_id|subject_name|Students for all year|					
+----------|------------|---------------------|					
+       201|Mathematics |                17485|					
+       202|Physics     |                16597|					
+       203|Chemistry   |                 2500|					
+					
+					
+31. From the following tables write a SQL query that will generate a report which shows the total number of students achieved 100 percent for the first year of each examination of every subject. Go to the editor					
+Input:					
+Table: exam_test					
+					
+exam_id|subject_id|exam_year|no_of_student|					
+-------|----------|---------|-------------|					
+     71|       201|     2017|         5146|					
+     71|       201|     2018|         3545|					
+     71|       202|     2017|         2701|					
+     71|       202|     2018|         5945|					
+     71|       202|     2019|         2500|					
+     71|       203|     2017|         2500|					
+     72|       201|     2018|         3500|					
+     72|       202|     2017|         3651|					
+     73|       201|     2017|         1000|					
+     73|       201|     2018|         2647|					
+     73|       201|     2019|         2647|					
+     73|       202|     2018|         4501|					
+					
+Table : subject_test					
+					
+subject_id|subject_name|					
+----------|------------|					
+       201|Mathematics |					
+       202|Physics     |					
+       203|Chemistry   |					
+					
+Output:					
+					
+exam_id|subject_name|first_year|no_of_student|					
+-------|------------|----------|-------------|					
+     71|Mathematics |      2017|         5146|					
+     71|Physics     |      2017|         2701|					
+     71|Chemistry   |      2017|         2500|					
+     72|Physics     |      2017|         3651|					
+     73|Mathematics |      2017|         1000|					
+					
+					
+32. From the following tables write a SQL query to display those managers who have average experience for each scheme. Go to the editor					
+Input:					
+Table: managing_body					
+					
+manager_id|manager_name|running_years|					
+----------|------------|-------------|					
+        51|James       |            5|					
+        52|Cork        |            3|					
+        53|Paul        |            4|					
+        54|Adam        |            3|					
+        55|Hense       |            4|					
+        56|Peter       |            2|					
+					
+Table : scheme					
+					
+scheme_code|scheme_manager_id|					
+-----------|-----------------|					
+       1001|               51|					
+       1001|               53|					
+       1001|               54|					
+       1001|               56|					
+       1002|               51|					
+       1002|               55|					
+       1003|               51|					
+       1004|               52|					
+					
+Output:					
+					
+scheme_code|Average year of experience|					
+-----------|--------------------------|					
+       1001|                      3.50|					
+       1002|                      4.50|					
+       1003|                      5.00|					
+       1004|                      3.00|					
+					
+					
+33. From the following tables write a SQL query to find those schemes which executed by minimum number of employees. Return scheme code. Go to the editor					
+Input:					
+Table: managing_body					
+					
+manager_id|manager_name|running_years|					
+----------|------------|-------------|					
+        51|James       |            5|					
+        52|Cork        |            3|					
+        53|Paul        |            4|					
+        54|Adam        |            3|					
+        55|Hense       |            4|					
+        56|Peter       |            2|					
+					
+Table : scheme					
+					
+scheme_code|scheme_manager_id|					
+-----------|-----------------|					
+       1001|               51|					
+       1001|               53|					
+       1001|               54|					
+       1001|               56|					
+       1002|               51|					
+       1002|               55|					
+       1003|               51|					
+       1004|               52|					
+					
+Output:					
+					
+scheme_code|					
+-----------|					
+       1003|					
+       1004|					
+					
+					
+34. From the following tables write a SQL query to find those experienced manager who execute the schemes. Return scheme code and scheme manager ID. Go to the editor					
+Input:					
+Table: managing_body					
+					
+manager_id|manager_name|running_years|					
+----------|------------|-------------|					
+        51|James       |            5|					
+        52|Cork        |            3|					
+        53|Paul        |            4|					
+        54|Adam        |            3|					
+        55|Hense       |            4|					
+        56|Peter       |            2|					
+					
+Table : scheme					
+					
+scheme_code|scheme_manager_id|					
+-----------|-----------------|					
+       1001|               51|					
+       1001|               53|					
+       1001|               54|					
+       1001|               56|					
+       1002|               51|					
+       1002|               55|					
+       1003|               51|					
+       1004|               52|					
+					
+Output:					
+					
+scheme_code|scheme_manager_id|					
+-----------|-----------------|					
+       1001|               51|					
+       1002|               51|					
+       1003|               51|					
+       1004|               52|					
+					
+					
+35. From the following tables write an SQL query to find the best seller by total sales price. Return distributor ID , If there is a tie, report them all. Go to the editor					
+Input:					
+Table: item					
+					
+item_code|item_desc   |cost|					
+---------|------------|----|					
+      101|mother board|2700|					
+      102|RAM         | 800|					
+      103|key board   | 300|					
+      104|mouse       | 300|					
+					
+Table : sales_info					
+					
+distributor_id|item_code|retailer_id|date_of_sell|quantity|total_cost|					
+--------------|---------|-----------|------------|--------|----------|					
+          5001|      101|       1001|  2020-02-12|       3|      8100|					
+          5001|      103|       1002|  2020-03-15|      15|      4500|					
+          5002|      101|       1001|  2019-06-24|       2|      5400|					
+          5001|      104|       1003|  2019-09-11|       8|      2400|					
+          5003|      101|       1003|  2020-10-21|       5|     13500|					
+          5003|      104|       1002|  2020-12-27|      10|      3000|					
+          5002|      102|       1001|  2019-05-18|      12|      9600|					
+          5002|      103|       1004|  2020-06-17|       8|      2400|					
+          5003|      103|       1001|  2020-04-12|       3|       900|  					
+					
+Output:					
+					
+distributor_id|					
+--------------|					
+          5002|					
+          5003|					
+					
+					
+36. From the following table write a SQL query to find those retailers who have bought 'key board' but not 'mouse'. Return retailer ID. Go to the editor					
+Input:					
+Table: item					
+					
+item_code|item_desc   |cost|					
+---------|------------|----|					
+      101|mother board|2700|					
+      102|RAM         | 800|					
+      103|key board   | 300|					
+      104|mouse       | 300|					
+					
+Table : sales_info					
+					
+distributor_id|item_code|retailer_id|date_of_sell|quantity|total_cost|					
+--------------|---------|-----------|------------|--------|----------|					
+          5001|      101|       1001|  2020-02-12|       3|      8100|					
+          5001|      103|       1002|  2020-03-15|      15|      4500|					
+          5002|      101|       1001|  2019-06-24|       2|      5400|					
+          5001|      104|       1003|  2019-09-11|       8|      2400|					
+          5003|      101|       1003|  2020-10-21|       5|     13500|					
+          5003|      104|       1002|  2020-12-27|      10|      3000|					
+          5002|      102|       1001|  2019-05-18|      12|      9600|					
+          5002|      103|       1004|  2020-06-17|       8|      2400|					
+          5003|      103|       1001|  2020-04-12|       3|       900|  					
+					
+Output:					
+					
+retailer_id|					
+-----------|					
+       1001|					
+       1004|					
+					
+					
+37. From the following table write a SQL query to display those items that were only sold in the 2nd quarter of a year, i.e. April 1st to June end for the year 2020. Return item code and item description. Go to the editor					
+Input:					
+Table: item					
+					
+item_code|item_desc   |cost|					
+---------|------------|----|					
+      101|mother board|2700|					
+      102|RAM         | 800|					
+      103|key board   | 300|					
+      104|mouse       | 300|					
+					
+Table : sales_info					
+					
+distributor_id|item_code|retailer_id|date_of_sell|quantity|total_cost|					
+--------------|---------|-----------|------------|--------|----------|					
+          5001|      101|       1001|  2020-02-12|       3|      8100|					
+          5001|      103|       1002|  2020-03-15|      15|      4500|					
+          5002|      101|       1001|  2019-06-24|       2|      5400|					
+          5001|      104|       1003|  2019-09-11|       8|      2400|					
+          5003|      101|       1003|  2020-10-21|       5|     13500|					
+          5003|      104|       1002|  2020-12-27|      10|      3000|					
+          5002|      102|       1001|  2019-05-18|      12|      9600|					
+          5002|      103|       1004|  2020-06-17|       8|      2400|					
+          5003|      103|       1001|  2020-04-12|       3|       900|  					
+					
+Output:					
+					
+item_code|item_desc   |					
+---------|------------|					
+      101|mother board|					
+      102|RAM         |					
+      103|key board   |					
+					
+					
+38. From the following table write a SQL query to find the highest purchase with its corresponding item for each customer. In case of a same quantity purchase find the item code which is smallest.					
+The output must be sorted by increasing of customer_id. Return customer ID,lowest item code and purchase quantity. Go to the editor					
+Input:					
+Table: purchase					
+					
+Field      |Type   |Null|Key|Default|Extra|					
+-----------|-------|----|---|-------|-----|					
+customer_id|int(11)|NO  |   |       |     |					
+item_code  |int(11)|NO  |   |       |     |					
+purch_qty  |int(11)|NO  |   |       |     |					
+					
+Data:					
+					
+customer_id|item_code|purch_qty|					
+-----------|---------|---------|					
+        101|      504|       25|					
+        101|      503|       50|					
+        102|      502|       40|					
+        102|      503|       25|					
+        102|      501|       45|					
+        103|      505|       30|					
+        103|      503|       25|					
+        104|      505|       40|					
+        101|      502|       25|					
+        102|      504|       40|					
+        102|      505|       50|					
+        103|      502|       25|					
+        104|      504|       40|					
+        103|      501|       35|					
+					
+Output:					
+					
+customer_id|lowest item code|purch_qty|					
+-----------|----------------|---------|					
+        101|             503|       50|					
+        102|             505|       50|					
+        103|             501|       35|					
+        104|             504|       40|					
+					
+					
+39. From the following table write a SQL query to find all the writers who rated at least one of their own topic. Sorted the result in ascending order by writer id. Return writer ID. Go to the editor					
+Input:					
+Table: topics					
+					
+Field         |Type   |Null|Key|Default|Extra|					
+--------------|-------|----|---|-------|-----|					
+topic_id      |int(11)|YES |   |       |     |					
+writer_id     |int(11)|YES |   |       |     |					
+rated_by      |int(11)|YES |   |       |     |					
+date_of_rating|date   |YES |   |       |     |					
+					
+Data:					
+					
+topic_id|writer_id|rated_by|date_of_rating|					
+-------|---------|--------|--------------|					
+  10001|      504|     507|    2020-07-17|					
+  10003|      502|     503|    2020-09-22|					
+  10001|      503|     507|    2020-02-07|					
+  10002|      501|     507|    2020-05-13|					
+  10002|      502|     502|    2020-04-10|					
+  10002|      504|     502|    2020-11-16|					
+  10003|      501|     502|    2020-10-05|					
+  10001|      507|     507|    2020-12-23|					
+  10004|      503|     501|    2020-08-28|					
+  10003|      505|     504|    2020-12-21|					
+					
+Output:					
+					
+Author rated on own topic|					
+-------------------------|					
+                      502|					
+                      507|					
+					
+					
+40. From the following table write a SQL query to find all the writers who rated more than one topics on the same date, sorted in ascending order by their id. Return writr ID. Go to the editor					
+Input:					
+Table: topics					
+					
+Field         |Type   |Null|Key|Default|Extra|					
+--------------|-------|----|---|-------|-----|					
+topic_id      |int(11)|YES |   |       |     |					
+writer_id     |int(11)|YES |   |       |     |					
+rated_by      |int(11)|YES |   |       |     |					
+date_of_rating|date   |YES |   |       |     |					
+					
+Data:					
+					
+topic_id|writer_id|rated_by|date_of_rating|					
+-------|---------|--------|--------------|					
+  10001|      504|     507|    2020-07-17|					
+  10003|      502|     503|    2020-09-22|					
+  10001|      503|     507|    2020-02-07|					
+  10002|      501|     507|    2020-05-13|					
+  10002|      502|     502|    2020-04-10|					
+  10002|      504|     502|    2020-11-16|					
+  10003|      501|     502|    2020-10-05|					
+  10001|      507|     507|    2020-12-23|					
+  10004|      503|     501|    2020-08-28|					
+  10003|      505|     504|    2020-12-21|					
+					
+Output:					
+					
+Topic rated by the writer|					
+-------------------------|					
+                      502|					
+                      507|					
+					
+					
+41. From the following table write a SQL query to make a report such that there is a product id column and a sale quantity column for each quarter. Return product ID and sale quantity of each quarter. Go to the editor					
+Input:					
+Table: sale					
+					
+Field     |Type       |Null|Key|Default|Extra|					
+----------|-----------|----|---|-------|-----|					
+product_id|int(11)    |NO  |PRI|       |     |					
+sale_qty  |int(11)    |YES |   |       |     |					
+qtr_no    |varchar(25)|NO  |PRI|       |     |					
+					
+Data:					
+					
+product_id|sale_qty|qtr_no|					
+----------|--------|------|					
+         1|   15000|qtr1  |					
+         1|   10000|qtr2  |					
+         2|   20000|qtr1  |					
+         2|   12000|qtr2  |					
+         3|   20000|qtr1  |					
+         3|   15000|qtr2  |					
+         3|   23000|qtr3  |					
+         3|   22000|qtr4  |					
+         4|   25000|qtr2  |					
+         4|   18000|qtr4  |					
+					
+Output:					
+					
+product_id      qtr1_sale       qtr2_sale       qtr3_sale       qtr4_sale					
+1       15000   10000   NULL    NULL					
+2       20000   12000   NULL    NULL					
+3       20000   15000   23000   22000					
+4       NULL    25000   NULL    18000					
+					
+					
+42. From the following table write a SQL query to find for each month and company, the number of orders issued and their total quantity, the number of orders booked and their total order quantity. Return month, name of the company, number of orders issued, number of booked orders, total order quantity and total booked orders quantity. Go to the editor					
+Input:					
+Table: order_stat					
+					
+Field    |Type       |Null|Key|Default|Extra|					
+---------|-----------|----|---|-------|-----|					
+order_id |int(11)    |NO  |PRI|       |     |					
+com_name |varchar(25)|YES |   |       |     |					
+ord_qty  |int(11)    |YES |   |       |     |					
+ord_stat |varchar(25)|YES |   |       |     |					
+stat_date|date       |YES |   |       |     |					
+					
+Data:					
+					
+order_id|com_name   |ord_qty|ord_stat |stat_date |					
+--------|-----------|-------|---------|----------|					
+     151|MMS INC    |    500|Booked   |2020-08-15|					
+     152|BCT LTD    |    300|Cancelled|2020-08-15|					
+     153|MMS INC    |    400|Cancelled|2020-08-26|					
+     154|XYZ COR    |    500|Booked   |2020-08-15|					
+     155|MMS INC    |    500|Cancelled|2020-10-11|					
+     156|BWD PRO LTD|    250|Cancelled|2020-11-15|					
+     157|BCT LTD    |    600|Booked   |2020-10-07|					
+     158|MMS INC    |    300|Booked   |2020-12-11|					
+     159|XYZ COR    |    300|Booked   |2020-08-26|					
+     160|BCT LTD    |    400|Booked   |2020-11-15|					
+					
+Output:					
+					
+month year      com_name        no_of_orders    booked_orders   total_order_qty no_of_booked_qty					
+2020-08         MMS INC         2               1               900                             500					
+2020-08         BCT LTD         1               0               300                             0					
+2020-08         XYZ COR         2               2               800                             800					
+2020-10         MMS INC         1               0               500                             0					
+2020-11         BWD PRO LTD     1               0               250                             0					
+2020-10         BCT LTD         1               1               600                             600					
+2020-12         MMS INC         1               1               300                             300					
+2020-11         BCT LTD         1               1               400                             400					
+					
+					
+43. From the following table write a SQL query to find for each month and company, the number of orders issued and their total quantity, the number of orders cancelled and their total quantity. Return month, name of the company, number of orders booked, number of booked quantity, number of cancelled order, and number of cancelled quantity. Go to the editor					
+Input:					
+Table: order_stat					
+					
+Field    |Type       |Null|Key|Default|Extra|					
+---------|-----------|----|---|-------|-----|					
+order_id |int(11)    |NO  |PRI|       |     |					
+com_name |varchar(25)|YES |   |       |     |					
+ord_qty  |int(11)    |YES |   |       |     |					
+ord_stat |varchar(25)|YES |   |       |     |					
+stat_date|date       |YES |   |       |     |					
+					
+Data:					
+					
+order_id|com_name   |ord_qty|ord_stat |stat_date |					
+--------|-----------|-------|---------|----------|					
+     151|MMS INC    |    500|Booked   |2020-08-15|					
+     152|BCT LTD    |    300|Cancelled|2020-08-15|					
+     153|MMS INC    |    400|Cancelled|2020-08-26|					
+     154|XYZ COR    |    500|Booked   |2020-08-15|					
+     155|MMS INC    |    500|Cancelled|2020-10-11|					
+     156|BWD PRO LTD|    250|Cancelled|2020-11-15|					
+     157|BCT LTD    |    600|Booked   |2020-10-07|					
+     158|MMS INC    |    300|Booked   |2020-12-11|					
+     159|XYZ COR    |    300|Booked   |2020-08-26|					
+     160|BCT LTD    |    400|Booked   |2020-11-15|					
+					
+Table: order_return					
+Structure:					
+Field	Type	Null	Key	Default	Extra
+order_id	int(11)	NO	MUL		
+return_date	date	YES			
+Data:					
+order_id	return_date				
+153	12-10-2020				
+154	07-11-2020				
+156	05-12-2020				
+159	17-09-2020				
+Output:					
+					
+month  |com_name   |booked_count|booked_qty|cancelled_count|cancelled_qty|					
+-------|-----------|------------|----------|---------------|-------------|					
+2020-08|BCT LTD    |           0|       0.0|              1|        300.0|					
+2020-08|MMS INC    |           1|     500.0|              1|        400.0|					
+2020-08|XYZ COR    |           2|     800.0|              0|          0.0|					
+2020-10|BCT LTD    |           1|     600.0|              0|          0.0|					
+2020-10|MMS INC    |           0|       0.0|              1|        500.0|					
+2020-11|BCT LTD    |           1|     400.0|              0|          0.0|					
+2020-11|BWD PRO LTD|           0|       0.0|              1|        250.0|					
+2020-12|MMS INC    |           1|     300.0|              0|          0.0|					
+					
+					
+44. From the following tables write a SQL query to find the average selling price for each item. Return item code and average_selling_price. average_selling_price should be rounded to 2 decimal places. Go to the editor					
+Input:					
+Table: item_price					
+					
+Field    |Type   |Null|Key|Default|Extra|					
+---------|-------|----|---|-------|-----|					
+item_code|int(11)|YES |   |       |     |					
+date_from|date   |YES |   |       |     |					
+date_to  |date   |YES |   |       |     |					
+item_cost|int(11)|YES |   |       |     |					
+					
+Data:					
+					
+item_code|date_from |date_to   |item_cost|					
+---------|----------|----------|---------|					
+      101|2018-04-07|2018-06-28|        8|					
+      102|2018-02-15|2018-04-17|       13|					
+      103|2018-03-12|2018-04-30|       10|					
+      101|2018-06-29|2018-10-31|       15|					
+      103|2018-05-01|2019-08-24|       14|					
+      102|2018-04-18|2018-07-10|       25|					
+      104|2018-06-11|2018-10-10|       25|					
+      101|2018-11-01|2019-01-15|       20|					
+					
+Table: sale					
+Structure:					
+Field	Type	Null	Key	Default	Extra
+sale_date	date	YES			
+item_code	int(11)	YES			
+sale_qty	int(11)	YES			
+Data:					
+sale_date	item_code	sale_qty			
+15-05-2018	101	120			
+27-04-2018	103	80			
+10-04-2018	102	200			
+12-07-2018	101	100			
+07-07-2018	103	50			
+17-09-2018	104	100			
+25-06-2018	102	100			
+Output:					
+					
+item_code|average_selling_price|					
+---------|---------------------|					
+      101|                11.18|					
+      102|                17.00|					
+      103|                11.54|					
+      104|                25.00|					
+					
+					
+45. From the following table write a SQL query to find all employees that directly or indirectly report to the head of the company. Return employee_id, name, and manager_id. Go to the editor					
+Input:					
+Table: emp_test_table					
+					
+Field      |Type       |Null|Key|Default|Extra|					
+-----------|-----------|----|---|-------|-----|					
+employee_id|int(11)    |NO  |PRI|       |     |					
+first_name |varchar(25)|YES |   |       |     |					
+manager_id |int(11)    |YES |   |       |     |					
+					
+Data:					
+					
+employee_id|first_name |manager_id|					
+-----------|-----------|----------|					
+        100|Steven     |       100|					
+        101|Neena      |       100|					
+        102|Lex        |       100|					
+        103|Alexander  |       102|					
+        104|Bruce      |       103|					
+        105|David      |       103|					
+        106|Valli      |       103|					
+        107|Diana      |       103|					
+        108|Nancy      |       101|					
+        109|Daniel     |       108|					
+        110|John       |       108|					
+					
+Output:					
+					
+employee_id|Name       |manager_id|					
+-----------|-----------|----------|					
+        101|Neena      |       100|					
+        102|Lex        |       100|					
+        103|Alexander  |       102|					
+        104|Bruce      |       103|					
+        105|David      |       103|					
+        106|Valli      |       103|					
+        107|Diana      |       103|					
+        108|Nancy      |       101|					
+        109|Daniel     |       108|					
+        110|John       |       108|					
+					
+					
+46. From the following tables write a SQL query to find the number of times each patient call the specialist doctor since their treating period. Order the result table by patient_id and specialist_call. Go to the editor					
+Input:					
+Table: patient					
+					
+Field       |Type       |Null|Key|Default|Extra|					
+------------|-----------|----|---|-------|-----|					
+patient_id  |int(11)    |NO  |PRI|       |     |					
+patient_name|varchar(25)|YES |   |       |     |					
+					
+Data:					
+					
+patient_id|patient_name   |					
+----------|---------------|					
+      1001|Gilbart Kane   |					
+      1002|Thomas Richi   |					
+      1003|Ricardo Grance |					
+      1004|Vanio Tishuma  |					
+      1005|Charls Brown   |					
+					
+Table: speciality					
+					
+Field     |Type       |Null|Key|Default|Extra|					
+----------|-----------|----|---|-------|-----|					
+specialist|varchar(25)|YES |   |       |     |					
+					
+Data:					
+					
+specialist |					
+-----------|					
+medicine   |					
+cardiology |					
+neurology  |					
+hematology |					
+					
+Table: treatment					
+					
+Field          |Type       |Null|Key|Default|Extra|					
+---------------|-----------|----|---|-------|-----|					
+patient_id     |int(11)    |YES |MUL|       |     |					
+specialist_call|varchar(25)|YES |   |       |     |					
+					
+Data:					
+					
+patient_id|specialist_call|					
+----------|---------------|					
+      1001|medicine       |					
+      1003|medicine       |					
+      1002|cardiology     |					
+      1001|hematology     |					
+      1004|medicine       |					
+      1003|cardiology     |					
+      1005|neurology      |					
+      1002|neurology      |					
+      1001|cardiology     |					
+      1005|cardiology     |					
+      1003|cardiology     |					
+      1005|hematology     |					
+      1004|hematology     |					
+      1005|neurology      |					
+      1002|neurology      |					
+      1001|hematology     |					
+					
+Output:					
+					
+patient_id|patient_name   |specialist |Specialist Attended|					
+----------|---------------|-----------|-------------------|					
+      1001|Gilbart Kane   |cardiology |                  1|					
+      1001|Gilbart Kane   |hematology |                  2|					
+      1001|Gilbart Kane   |medicine   |                  1|					
+      1001|Gilbart Kane   |neurology  |                  0|					
+      1002|Thomas Richi   |cardiology |                  1|					
+      1002|Thomas Richi   |hematology |                  0|					
+      1002|Thomas Richi   |medicine   |                  0|					
+      1002|Thomas Richi   |neurology  |                  2|					
+      1003|Ricardo Grance |cardiology |                  2|					
+      1003|Ricardo Grance |hematology |                  0|					
+      1003|Ricardo Grance |medicine   |                  1|					
+      1003|Ricardo Grance |neurology  |                  0|					
+      1004|Vanio Tishuma  |cardiology |                  0|					
+      1004|Vanio Tishuma  |hematology |                  1|					
+      1004|Vanio Tishuma  |medicine   |                  1|					
+      1004|Vanio Tishuma  |neurology  |                  0|					
+      1005|Charls Brown   |cardiology |                  1|					
+      1005|Charls Brown   |hematology |                  1|					
+      1005|Charls Brown   |medicine   |                  0|					
+      1005|Charls Brown   |neurology  |                  2|					
+					
+					
+47. From the following table write a SQL query to find the number of employees are working in the department of each employees. Return employee Id and number of employees are working in their department.. Go to the editor					
+Input:					
+Table: emp_test_table					
+					
+Field      |Type       |Null|Key|Default|Extra|					
+-----------|-----------|----|---|-------|-----|					
+employee_id|int(11)    |NO  |PRI|       |     |					
+first_name |varchar(25)|YES |   |       |     |					
+manager_id |int(11)    |YES |   |       |     |					
+					
+Data:					
+					
+employee_id|first_name |department_id|					
+-----------|-----------|-------------|					
+        100|Steven     |           90|					
+        101|Neena      |           90|					
+        102|Lex        |           90|					
+        103|Alexander  |           60|					
+        104|Bruce      |           60|					
+        105|David      |           60|					
+        106|Valli      |           60|					
+        107|Diana      |           60|					
+        108|Nancy      |          100|					
+        109|Daniel     |          100|					
+        110|John       |          100|					
+					
+Output:					
+					
+employee_id|employees_in_department|					
+-----------|-----------------------|					
+        100|                      3|					
+        101|                      3|					
+        102|                      3|					
+        103|                      5|					
+        104|                      5|					
+        105|                      5|					
+        106|                      5|					
+        107|                      5|					
+        108|                      3|					
+        109|                      3|					
+        110|                      3|					
+					
+					

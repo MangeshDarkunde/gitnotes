@@ -1,0 +1,98 @@
+SQL questions;
+
+1.what is difference between subquery and corelational query ?
+
+2.How display the date of upcoming friday?
+
+3. What is diff between rank, dense rank and row no?
+
+4.How to display bottom 5 records?
+
+5.what is diff between alter and update command?
+
+6.display department wise minimum salary?
+Ans-Select dept,min(salary)from table_name group by dept;
+
+7. what is the diff between dcl and tcl command?
+Ans: DCL -data control language- grant and revoke command use for authorization giving and take back
+    tcl- transaction controllanguage 
+
+8. Display city name not starting with vowels (a,e,i,o,u) by using like operator
+Ans- select city from table where city like '[^aeiou%]'
+
+9. Display city name not starting with vowels (a,e,i,o,u) by using like substring ?
+Ans- select*,substring(city_name,starting_value,difference_value) where city_name not in ('a','e','i','o','u',1,1) as name_without_vowels from Table_name
+
+10.Update all employee salary by 10% ?
+Ans- Update salary from table_name set salary =(salary+salary *0.10)
+
+11.How to display the duplicate records?
+Ans- select ID,count(*) from information group by ID having count(*)>1;
+
+12.Explain diff between in, not in, exist, not exist and between command?
+
+13. What is the diff between inner join and equi join?
+
+14. What is set operator ?
+
+15. display name whose first and last cahracter is T ?
+Ans-select * from table name where name like T%R;
+
+
+16. How will you find How many records are missing in target system as compared to source system?
+Ans- Select * from souce system expect select * from target source
+
+17. Display 4th highest salary by using subquery?
+
+18. Display 4th highest salary by using dense rank?
+
+19. How to display common records from two or more tables?
+
+20.List the student name living in same city?
+
+21. Diff between having and where clause?
+
+22.How to calculate count of emplyoees in each department?
+Ans- select 
+
+23. If you have yearly salary then how to display monthly salary?
+Ans- select *,new=salary/12 from college;
+
+24. Display department wise rank salary?
+
+25.Display sum of salary in each department and arrange in descending order?
+
+26. Join 5 tables query?
+
+27.Select gender,age from Table where avg(age)>30 group by gender  query correct or not?
+Ans-  
+
+28.Find out the average salary of each department where average salary is less than 50000 ?
+Ans- select dept, avg(salary)  
+
+29.Create one table where marks is greater 40 should be enter ?
+
+30.Display the students name live in out of maharashtra and using language mostly hindi and english?
+
+31.Extract first 5 characters from name?
+
+32.Table 1 contains value 1,1,2,null and table 2 contains value 2,3,4,null,null use result inner,left and right join?
+
+33. Write a query to dispaly 3rd last character is p?
+
+34. Explain distinct and group by ?
+
+35. Find out sum of salary of each department except civil department?
+
+36. Find out query which can create replica of existing table?
+
+37. Create table having 3 column and in one column we only can enter true or false?
+ 
+38. Display longest and shortest city name from city column?
+
+39.
+
+
+
+
+

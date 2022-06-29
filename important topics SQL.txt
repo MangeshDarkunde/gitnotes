@@ -1,0 +1,8 @@
+SQL
+1.DML,TCL,DDL,
+2.VIEWS
+3.STORE PROCEDURE
+4.FUNCTION
+5.INDEX
+6.JOIN
+7.shellscripting (unix)
